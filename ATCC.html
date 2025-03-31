@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>【限時領取】你已獲得 LINE 會員現金紅包！</title>
-  <!-- Open Graph Meta Tags -->
+
+  <!-- Open Graph Meta Tags（給 LINE、Facebook 預覽用）-->
   <meta property="og:title" content="【限時領取】你已獲得 LINE 會員現金紅包！">
   <meta property="og:description" content="體驗防詐心理測驗，了解你的識騙能力！">
-  <meta property="og:url" content="https://b7b7d617-cede-4a85-9f63-c8e6374b47e7-00-35c7umbw96ars.pike.replit.dev/">
+  <meta property="og:url" content="https://elliswu0918.github.io/ATCC/">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://b7b7d617-cede-4a85-9f63-c8e6374b47e7-00-35c7umbw96ars.pike.replit.dev/path/to/your/image.jpg">
+  <meta property="og:image" content="https://source.unsplash.com/600x400/?gift,money"> <!-- 你也可換成自己的圖片 -->
 
   <style>
     body {
@@ -41,6 +42,12 @@
       color: #333;
       margin-bottom: 20px;
     }
+    img {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
     button {
       padding: 12px 20px;
       font-size: 16px;
@@ -60,24 +67,22 @@
   </style>
 
   <script>
-    // 當用戶點擊「我要領獎!」
     function chooseReward() {
       document.getElementById('winningSection').classList.add('hidden');
       document.getElementById('choiceButtons').classList.add('hidden');
       document.getElementById('resultSection').classList.remove('hidden');
       document.getElementById('resultTitle').innerText = "你被騙了！";
-      document.getElementById('resultText').innerText = "這是詐騙連結!以下防詐心理測驗，讓你了解自己的識騙能力";
+      document.getElementById('resultText').innerText = "這是詐騙連結！以下是防詐心理測驗，讓你了解自己的識騙能力。";
       document.getElementById('finalMessage').classList.remove('hidden');
       document.getElementById('enterTestBtn').classList.remove('hidden');
     }
 
-    // 當用戶點擊「痛失機會!」
     function chooseMiss() {
       document.getElementById('winningSection').classList.add('hidden');
       document.getElementById('choiceButtons').classList.add('hidden');
       document.getElementById('resultSection').classList.remove('hidden');
       document.getElementById('resultTitle').innerText = "你很聰明喔!!!";
-      document.getElementById('resultText').innerText = "請不要過度自信!你差點被騙了!!點擊按鈕測試防詐能力";
+      document.getElementById('resultText').innerText = "請不要過度自信！你差點被騙了！！點擊按鈕測試防詐能力。";
       document.getElementById('finalMessage').classList.remove('hidden');
       document.getElementById('enterTestBtn').classList.remove('hidden');
     }
@@ -85,30 +90,30 @@
 </head>
 <body>
   <div class="container">
-    <!-- 第一階段：偽裝中獎頁面 -->
+    <!-- 偽裝中獎區 -->
     <div id="winningSection">
       <h1>【限時領取】你已獲得 LINE 會員現金紅包！</h1>
-      <p>請在30秒內點擊下方按鈕領取紅包！</p>
+      <img src="https://source.unsplash.com/600x400/?money,red-envelope" alt="紅包圖片">
+      <p>請在 30 秒內點擊下方按鈕領取紅包！</p>
     </div>
 
-    <!-- 按鈕選擇區：立即顯示 -->
+    <!-- 選擇按鈕區 -->
     <div id="choiceButtons">
-      <button onclick="chooseReward()">我要領獎!</button>
-      <button onclick="chooseMiss()">痛失機會!</button>
+      <button onclick="chooseReward()">我要領獎！</button>
+      <button onclick="chooseMiss()">痛失機會！</button>
     </div>
 
-    <!-- 結果區，初始隱藏 -->
+    <!-- 結果區 -->
     <div id="resultSection" class="hidden">
       <h1 id="resultTitle"></h1>
       <p id="resultText"></p>
     </div>
 
-    <!-- 進入心理測驗頁面的按鈕 -->
+    <!-- 進入心理測驗 -->
     <button id="enterTestBtn" class="hidden" onclick="window.location.href='https://ooopenlab.cc/quiz/LKhSAHvxW0c7feArX2U7'">
       開始心理測驗 & 獲得抽獎資格
     </button>
 
-    <!-- 提示訊息：位於按鈕下方 -->
     <p id="finalMessage" class="hidden" style="font-size:16px; color:#555; margin-top:20px;">
       完成心理測驗後，你將有機會獲得抽獎資格，並分享測驗結果給好友！
     </p>
